@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剑钧文学 - 作家剑钧官方网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', '宋体', 'SimSun', 'Times New Roman', serif;
+            background-color: #faf9de; /* 杏仁黄背景，温润护眼 */
+            color: #3e3a39; /* 墨黑文字，柔和 */
+            line-height: 1.8;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23faf9de" opacity="0.3"/><path d="M10 10 L90 10 M10 30 L90 30 M10 50 L90 50 M10 70 L90 70 M10 90 L90 90" stroke="%23a52a2a" stroke-width="0.3" opacity="0.1"/><path d="M10 10 L10 90 M30 10 L30 90 M50 10 L50 90 M70 10 L70 90 M90 10 L90 90" stroke="%23a52a2a" stroke-width="0.3" opacity="0.1"/></svg>');
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            background-color: rgba(255, 249, 240, 0.8); /* 米白透亮 */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
+        }
+
+        /* 头部样式 */
+        header {
+            padding: 30px 0 20px;
+            border-bottom: 2px solid #a52a2a; /* 红木色 */
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: #a52a2a;
+        }
+
+        .logo {
+            font-size: 42px;
+            font-weight: 300;
+            font-family: 'STSong', '华文宋体', 'SimSun', serif;
+            letter-spacing: 6px;
+            color: #3e3a39;
+            margin-bottom: 5px;
+        }
+
+        .logo span {
+            color: #a52a2a;
+            font-weight: 400;
+            font-size: 24px;
+            margin-left: 15px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+            border-left: 3px solid #a52a2a;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* 导航栏 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3e3a39;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #a52a2a;
+            color: #a52a2a;
+        }
+
+        .nav-links a.active {
+            border-bottom-color: #a52a2a;
+            color: #a52a2a;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #3e3a39;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #a52a2a;
+            color: white;
+            border-color: #a52a2a;
+        }
+
+        /* 主视觉区 */
+        .hero {
+            background: linear-gradient(90deg, rgba(250,249,222,0.9) 0%, rgba(255,249,240,0.7) 100%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200"><path d="M20 20 Q 40 10, 60 20 T 100 20" stroke="%23a52a2a" fill="none" stroke-width="0.5" opacity="0.2"/><path d="M10 40 Q 30 30, 50 40 T 90 40" stroke="%23a52a2a" fill="none" stroke-width="0.5" opacity="0.2"/><path d="M15 70 Q 45 50, 75 70" stroke="%23a52a2a" fill="none" stroke-width="0.5" opacity="0.2"/></svg>');
+            background-size: cover;
+            padding: 60px 50px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+            position: relative;
+            border-left: 5px solid #a52a2a;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+        }
+
+        .hero-quote {
+            font-size: 32px;
+            font-family: 'STKaiti', '华文楷体', 'KaiTi', serif;
+            color: #3e3a39;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero-quote small {
+            font-size: 20px;
+            color: #a52a2a;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 300;
+            color: #a52a2a;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* 栏目标题 */
+        .section-title {
+            font-size: 28px;
+            font-weight: 300;
+            font-family: 'STSong', serif;
+            margin: 50px 0 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: #3e3a39;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #a52a2a;
+        }
+
+        .section-title .en {
+            font-size: 16px;
+            color: #a52a2a;
+            margin-left: 15px;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* 最新动态卡片 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .news-card {
+            background: #fff9f0; /* 米白卡片 */
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .news-card:hover {
+            box-shadow: 0 5px 20px rgba(165,42,42,0.05);
+            border-color: #a52a2a;
+        }
+
+        .news-date {
+            color: #a52a2a;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #3e3a39;
+        }
+
+        .news-desc {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* 作品分类标签 */
+        .work-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .work-tab {
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            background: transparent;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            border-radius: 30px;
+            color: #666;
+        }
+
+        .work-tab:hover, .work-tab.active {
+            background-color: #a52a2a;
+            border-color: #a52a2a;
+            color: white;
+        }
+
+        /* 作品网格 */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .work-item {
+            background: #fff9f0;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(165,42,42,0.1);
+            border-color: #a52a2a;
+        }
+
+        .work-cover {
+            height: 200px;
+            background: linear-gradient(135deg, #faf9de 0%, #f0e8d0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #a52a2a;
+            opacity: 0.7;
+            font-family: 'KaiTi', serif;
+            border-bottom: 1px solid #eee;
+        }
+
+        .work-info {
+            padding: 18px;
+        }
+
+        .work-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #3e3a39;
+        }
+
+        .work-meta {
+            font-size: 13px;
+            color: #a52a2a;
+            margin-bottom: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .work-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .work-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #a52a2a;
+            color: white;
+            padding: 3px 10px;
+            font-size: 12px;
+            border-radius: 20px;
+            opacity: 0.9;
+        }
+
+        /* 走近剑钧区域 */
+        .about-section {
+            display: flex;
+            gap: 50px;
+            margin: 40px 0;
+            background: #fff9f0;
+            padding: 40px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .about-left {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 1/1.2;
+            background: linear-gradient(145deg, #f0e9e0, #e0d8d0);
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .about-right {
+            flex: 2;
+        }
+
+        .about-quote {
+            font-size: 20px;
+            font-style: italic;
+            color: #3e3a39;
+            border-left: 3px solid #a52a2a;
+            padding-left: 25px;
+            margin-bottom: 25px;
+            font-family: 'STKaiti', serif;
+            line-height: 1.8;
+        }
+
+        .about-bio {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .about-awards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .award-item {
+            background: #f5f0e8;
+            padding: 5px 15px;
+            font-size: 14px;
+            color: #a52a2a;
+            border-radius: 30px;
+        }
+
+        /* 底部 */
+        footer {
+            margin-top: 70px;
+            padding: 40px 0 30px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #a52a2a;
+        }
+
+        @media (max-width: 900px) {
+            .works-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-section {
+                flex-direction: column;
+            }
+            .about-left {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .works-grid, .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .hero-quote {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">剑钧文学 <span>Jianjun's Literature</span></div>
+            <div class="subtitle">生命之于我，是一个行走的过程，试着把创作当作写给岁月的情书</div>
+        </header>
+
+        <nav>
+            <div class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">走近剑钧</a>
+                <a href="#">作品库</a>
+                <a href="#">文学足迹</a>
+                <a href="#">独家文摘</a>
+                <a href="#">联系合作</a>
+            </div>
+            <div class="social-links">
+                <a href="#">微信公众号</a>
+                <a href="#">豆瓣</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-quote">
+                “生命之于我，是一个行走的过程，<br>试着把创作当作写给岁月的情书”
+                <small>—— 剑钧</small>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">29</div>
+                    <div class="stat-label">部作品</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">700</div>
+                    <div class="stat-label">万字创作</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">部长篇小说</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">部散文集</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 最新动态 -->
+        <div class="section-title">
+            最新动态 <span class="en">News</span>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-date">2026年1月</div>
+                <div class="news-title">长篇小说《北京背影》出版</div>
+                <div class="news-desc">中国文史出版社出版发行，书写北京城的历史背影与人文故事。</div>
+            </div>
+            <div class="news-card">
+                <div class="news-date">2025年10月</div>
+                <div class="news-title">《中国古树大观·神话传说》问世</div>
+                <div class="news-desc">中国林业出版社出版，探寻古树背后的神话传说与文化意蕴。</div>
+            </div>
+            <div class="news-card">
+                <div class="news-date">2025年9月</div>
+                <div class="news-title">散文集《我挽春风去远方》出版</div>
+                <div class="news-desc">江西高校出版社，收录近年散文新作，以春风为笔，写远方之思。</div>
+            </div>
+        </div>
+
+        <!-- 走近剑钧（融合区域） -->
+        <div class="section-title">
+            走近剑钧 <span class="en">About</span>
+        </div>
+        <div class="about-section">
+            <div class="about-left">
+                <div class="about-photo">
+                    <!-- 这里替换为您的照片：<img src="jianjun.jpg" alt="剑钧肖像" style="width:100%; height:auto; display:block;"> -->
+                    [作家剑钧肖像照]
+                </div>
+                <div class="award-item" style="margin-top: 10px; text-align: center; background: #a52a2a; color: white;">中国作家协会会员</div>
+            </div>
+            <div class="about-right">
+                <div class="about-quote">
+                    本名刘建军，以笔名剑钧行世。中国作家协会会员，多家报刊专栏作家。
+                </div>
+                <div class="about-bio">
+                    已出版长篇小说《爱情距离》《古宅》《巴黎背影》《北京背影》等10部，散文(诗)集《写给岁月的情书》《我挽春风去远方》等11部，长篇纪实文学《守桥翁的中国梦》《黎明再出发》等8部，共29部作品，累计创作700万字。
+                </div>
+                <div class="about-bio">
+                    长篇报告文学作品入选中宣部“时代楷模”重点选题，散文作品选入《大学语文》主题教材、中考试卷、模拟试卷及各类教辅书。有多部作品入选亚马逊、当当、新华书店文学作品排行榜。
+                </div>
+                <div class="about-awards">
+                    <span class="award-item">长征文艺奖</span>
+                    <span class="award-item">入选《大学语文》主题教材</span>  <!-- 修改点1 -->
+                    <span class="award-item">入选“时代楷模”重点选题</span>
+                    <span class="award-item">作品入选中考试卷</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 作品库 -->
+        <div class="section-title">
+            作品库 <span class="en">Works</span>
+        </div>
+        
+        <!-- 作品分类标签 -->
+        <div class="work-tabs">
+            <button class="work-tab active">全部作品</button>
+            <button class="work-tab">长篇小说</button>
+            <button class="work-tab">散文/随笔</button>
+            <button class="work-tab">纪实文学</button>
+            <button class="work-tab">散文诗</button>
+            <button class="work-tab">代表作</button>
+        </div>
+
+        <!-- 作品网格 - 这里展示部分代表作 -->
+        <div class="works-grid">
+            <!-- 长篇小说 -->
+            <div class="work-item">
+                <div class="work-tag">长篇</div>
+                <div class="work-cover">📖</div>
+                <div class="work-info">
+                    <div class="work-title">北京背影</div>
+                    <div class="work-meta">中国文史出版社 · 2026</div>
+                    <div class="work-desc">最新长篇力作，书写北京的历史人文背影。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">长篇</div>
+                <div class="work-cover">📖</div>
+                <div class="work-info">
+                    <div class="work-title">巴黎背影</div>
+                    <div class="work-meta">中国文史出版社 · 2021</div>
+                    <div class="work-desc">异域风情与东方情怀的交织，一段关于巴黎的文学追寻。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">长篇</div>
+                <div class="work-cover">📖</div>
+                <div class="work-info">
+                    <div class="work-title">古宅</div>
+                    <div class="work-meta">文化艺术出版社 · 2000</div>
+                    <div class="work-desc">一座古宅，几代人的恩怨情仇，岁月深处的家族秘史。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">长篇</div>
+                <div class="work-cover">📖</div>
+                <div class="work-info">
+                    <div class="work-title">爱情距离</div>
+                    <div class="work-meta">作家出版社 · 2004</div>
+                    <div class="work-desc">探讨现代都市人的情感距离，爱情究竟有多远？</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">散文集</div>
+                <div class="work-cover">📝</div>
+                <div class="work-info">
+                    <div class="work-title">我挽春风去远方</div>
+                    <div class="work-meta">江西高校出版社 · 2025</div>
+                    <div class="work-desc">以春风为笔，写远方之思，近年散文新作结集。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">散文集</div>
+                <div class="work-cover">📝</div>
+                <div class="work-info">
+                    <div class="work-title">写给岁月的情书</div>
+                    <div class="work-meta">民主与建设出版社 · 2019</div>
+                    <div class="work-desc">把岁月当作爱人，写下一封封深情的情书。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">纪实</div>
+                <div class="work-cover">📰</div>
+                <div class="work-info">
+                    <div class="work-title">守桥翁的中国梦</div>
+                    <div class="work-meta">中国青年出版社 · 2014</div>
+                    <div class="work-desc">长篇纪实文学，讲述了中国人民抗日战争纪念馆的创建过程。</div>  <!-- 修改点2 -->
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">游记</div>
+                <div class="work-cover">🌍</div>
+                <div class="work-info">
+                    <div class="work-title">寻梦塞纳河</div>
+                    <div class="work-meta">知识出版社 · 2016</div>
+                    <div class="work-desc">长篇游记散文，在塞纳河畔寻一场文学之梦。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">散文诗</div>
+                <div class="work-cover">💫</div>
+                <div class="work-info">
+                    <div class="work-title">爱的雨巷</div>
+                    <div class="work-meta">内蒙古少儿出版社 · 2000</div>
+                    <div class="work-desc">散文诗集，在雨巷中寻觅爱的足迹。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">文化</div>
+                <div class="work-cover">🌲</div>
+                <div class="work-info">
+                    <div class="work-title">中国古树大观·神话传说</div>
+                    <div class="work-meta">中国林业出版社 · 2025</div>
+                    <div class="work-desc">探寻古树背后的神话传说与文化意蕴。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">传记</div>
+                <div class="work-cover">👤</div>
+                <div class="work-info">
+                    <div class="work-title">王磊传</div>
+                    <div class="work-meta">内蒙古人民出版社 · 即出</div>
+                    <div class="work-desc">即将出版的人物传记。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">传记</div>
+                <div class="work-cover">👤</div>
+                <div class="work-info">
+                    <div class="work-title">扎拉嘎胡传</div>
+                    <div class="work-meta">内蒙古人民出版社 · 即出</div>
+                    <div class="work-desc">即将出版的人物传记。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文学足迹预览 -->
+        <div class="section-title">
+            文学足迹 <span class="en">Footprints</span>
+        </div>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; background: #fff9f0; padding: 25px; border: 1px solid #eee;">
+            <div style="flex:1; min-width: 200px;">
+                <div style="font-size: 14px; color: #a52a2a; margin-bottom: 5px;">2025.09</div>
+                <div style="font-weight: 500;">《巴黎背影》北大纵横作品分享会</div>  <!-- 修改点3 -->
+                <div style="color: #666; font-size: 14px;">与读者面对面</div>
+            </div>
+            <div style="flex:1; min-width: 200px;">
+                <div style="font-size: 14px; color: #a52a2a; margin-bottom: 5px;">2014.05</div>  <!-- 新增点4 -->
+                <div style="font-weight: 500;">《我愿用温柔对你，赶走这个世界的阴霾》北京师范大学文学院 文学创作分享会</div>
+                <div style="color: #666; font-size: 14px;">与师生交流创作心得</div>
+            </div>
+            <div style="flex:1; min-width: 200px;">
+                <div style="font-size: 14px; color: #a52a2a; margin-bottom: 5px;">2025.06</div>
+                <div style="font-weight: 500;">《我挽春风去远方》读者沙龙</div>
+                <div style="color: #666; font-size: 14px;">与读者共读散文，分享创作故事</div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <footer>
+            <div>© 2026 剑钧文学 · 版权所有 · 本名刘建军</div>
+            <div class="footer-links">
+                <a href="#">关于本站</a>
+                <a href="#">联系合作</a>
+                <a href="#">隐私政策</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的标签切换效果（演示用）- 可点击查看分类，目前仅弹出提示
+        document.querySelectorAll('.work-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.work-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                alert('作品分类功能正在建设中，后续会实现筛选。');
+            });
+        });
+    </script>
+</body>
+</html>
