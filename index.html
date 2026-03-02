@@ -470,13 +470,15 @@
 </head>
 <body>
     <div class="container">
-        <header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-    <div>
+       <header style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap;">
+    <div style="flex: 1; min-width: 0; /* 允许内部内容缩小 */">
         <div class="logo">剑钧文学 <span>Jianjun's Literature</span></div>
         <div class="subtitle">生命之于我，是一个行走的过程，试着把创作当作写给岁月的情书</div>
     </div>
-    <div class="avatar">
-     <img src="avatar.jpg.jpg" alt="剑钧头像" style="width: 80px; height: 80px; border-radius: 50%; object-fit: contain; border: 2px solid #a52a2a; background-color: #f5f0e8;">
+    <div style="flex-shrink: 0;">
+        <img src="avatar.jpg.jpg" alt="剑钧头像" style="width: 80px; height: auto; border: 2px solid #a52a2a;">
+    </div>
+</header>
 
         <nav>
             <div class="nav-links">
@@ -745,6 +747,7 @@
 </body>
 
 </html>
+
 
 
 
