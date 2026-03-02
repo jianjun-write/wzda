@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -13,8 +14,8 @@
 
         body {
             font-family: 'Microsoft YaHei', '宋体', 'SimSun', 'Times New Roman', serif;
-            background-color: #faf9de; /* 杏仁黄背景，温润护眼 */
-            color: #3e3a39; /* 墨黑文字，柔和 */
+            background-color: #faf9de;
+            color: #3e3a39;
             line-height: 1.8;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23faf9de" opacity="0.3"/><path d="M10 10 L90 10 M10 30 L90 30 M10 50 L90 50 M10 70 L90 70 M10 90 L90 90" stroke="%23a52a2a" stroke-width="0.3" opacity="0.1"/><path d="M10 10 L10 90 M30 10 L30 90 M50 10 L50 90 M70 10 L70 90 M90 10 L90 90" stroke="%23a52a2a" stroke-width="0.3" opacity="0.1"/></svg>');
         }
@@ -23,14 +24,14 @@
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 40px;
-            background-color: rgba(255, 249, 240, 0.8); /* 米白透亮 */
+            background-color: rgba(255, 249, 240, 0.8);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
         }
 
         /* 头部样式 */
         header {
             padding: 30px 0 20px;
-            border-bottom: 2px solid #a52a2a; /* 红木色 */
+            border-bottom: 2px solid #a52a2a;
             position: relative;
             margin-bottom: 30px;
         }
@@ -96,11 +97,7 @@
             transition: all 0.3s;
         }
 
-        .nav-links a:hover {
-            border-bottom-color: #a52a2a;
-            color: #a52a2a;
-        }
-
+        .nav-links a:hover,
         .nav-links a.active {
             border-bottom-color: #a52a2a;
             color: #a52a2a;
@@ -134,7 +131,6 @@
             padding: 60px 50px;
             margin-bottom: 50px;
             border-radius: 4px;
-            position: relative;
             border-left: 5px solid #a52a2a;
             box-shadow: 0 10px 20px rgba(0,0,0,0.02);
         }
@@ -218,7 +214,7 @@
         }
 
         .news-card {
-            background: #fff9f0; /* 米白卡片 */
+            background: #fff9f0;
             padding: 25px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
             border: 1px solid #eee;
@@ -269,7 +265,8 @@
             color: #666;
         }
 
-        .work-tab:hover, .work-tab.active {
+        .work-tab:hover,
+        .work-tab.active {
             background-color: #a52a2a;
             border-color: #a52a2a;
             color: white;
@@ -467,17 +464,16 @@
             }
         }
     </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 正确的头部（无头像） -->
+        <header>
+            <div class="logo">剑钧文学 <span>Jianjun's Literature</span></div>
+            <div class="subtitle">生命之于我，是一个行走的过程，试着把创作当作写给岁月的情书</div>
+        </header>
 
-    <header style="display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 15px;">
-    <div>
-        <div class="logo">剑钧文学 <span>Jianjun's Literature</span></div>
-        <div class="subtitle">生命之于我，是一个行走的过程，试着把创作当作写给岁月的情书</div>
-    </div>
-    <div>
-        <img src="avatar.jpg" alt="剑钧头像" style="width: 80px; height: auto; border: 2px solid #a52a2a; border-radius: 50%;">
-    </div>
-</header>
-
+        <!-- 导航栏 -->
         <nav>
             <div class="nav-links">
                 <a href="#" class="active">首页</a>
@@ -493,10 +489,12 @@
             </div>
         </nav>
 
-       <header>
-    <div class="logo">剑钧文学 <span>Jianjun's Literature</span></div>
-    <div class="subtitle">生命之于我，是一个行走的过程，试着把创作当作写给岁月的情书</div>
-</header>
+        <!-- 主视觉区（完整） -->
+        <div class="hero">
+            <div class="hero-quote">
+                “生命之于我，是一个行走的过程，<br>试着把创作当作写给岁月的情书”
+                <small>—— 剑钧</small>
+            </div>
             <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-number">29</div>
@@ -539,14 +537,15 @@
             </div>
         </div>
 
-        <!-- 走近剑钧（融合区域） -->
+        <!-- 走近剑钧 -->
         <div class="section-title">
             走近剑钧 <span class="en">About</span>
         </div>
         <div class="about-section">
             <div class="about-left">
                 <div class="about-photo">
-                   <img src="jianphoto.jpg.jpg" alt="剑钧肖像" style="width:100%; height:auto; display:block;">
+                    <!-- 请确保照片文件名为 jianphoto.jpg（只有一个.jpg） -->
+                    <img src="jianphoto.jpg" alt="剑钧肖像" style="width:100%; height:auto; display:block;">
                 </div>
                 <div class="award-item" style="margin-top: 10px; text-align: center; background: #a52a2a; color: white;">中国作家协会会员</div>
             </div>
@@ -562,7 +561,7 @@
                 </div>
                 <div class="about-awards">
                     <span class="award-item">两度长征文艺奖</span>
-                    <span class="award-item">入选《大学语文》主题教材</span>  <!-- 修改点1 -->
+                    <span class="award-item">入选《大学语文》主题教材</span>
                     <span class="award-item">入选“时代楷模”重点选题</span>
                     <span class="award-item">作品入选中考试卷</span>
                 </div>
@@ -573,8 +572,6 @@
         <div class="section-title">
             作品库 <span class="en">Works</span>
         </div>
-        
-        <!-- 作品分类标签 -->
         <div class="work-tabs">
             <button class="work-tab active">全部作品</button>
             <button class="work-tab">长篇小说</button>
@@ -583,8 +580,6 @@
             <button class="work-tab">散文诗</button>
             <button class="work-tab">代表作</button>
         </div>
-
-        <!-- 作品网格 - 这里展示部分代表作 -->
         <div class="works-grid">
             <!-- 长篇小说 -->
             <div class="work-item">
@@ -624,42 +619,6 @@
                 </div>
             </div>
             <div class="work-item">
-                <div class="work-tag">散文集</div>
-                <div class="work-cover">📝</div>
-                <div class="work-info">
-                    <div class="work-title">我挽春风去远方</div>
-                    <div class="work-meta">江西高校出版社 · 2025</div>
-                    <div class="work-desc">以春风为笔，写远方之思，近年散文新作结集。</div>
-                </div>
-            </div>
-            <div class="work-item">
-                <div class="work-tag">散文集</div>
-                <div class="work-cover">📝</div>
-                <div class="work-info">
-                    <div class="work-title">写给岁月的情书</div>
-                    <div class="work-meta">民主与建设出版社 · 2019</div>
-                    <div class="work-desc">把岁月当作爱人，写下一封封深情的情书。</div>
-                </div>
-            </div>
-            <div class="work-item">
-                <div class="work-tag">纪实</div>
-                <div class="work-cover">📰</div>
-                <div class="work-info">
-                    <div class="work-title">守桥翁的中国梦</div>
-                    <div class="work-meta">中国青年出版社 · 2014</div>
-                    <div class="work-desc">长篇纪实文学，中国人民抗日战争纪念馆的创建往事。</div>  <!-- 修改点2 -->
-                </div>
-            </div>
-            <div class="work-item">
-                <div class="work-tag">游记</div>
-                <div class="work-cover">🌍</div>
-                <div class="work-info">
-                    <div class="work-title">寻梦塞纳河</div>
-                    <div class="work-meta">知识出版社 · 2016</div>
-                    <div class="work-desc">长篇游记散文，在塞纳河畔寻一场文学之梦。</div>
-                </div>
-            </div>
-            <div class="work-item">
                 <div class="work-tag">长篇小说</div>
                 <div class="work-cover">💫</div>
                 <div class="work-info">
@@ -675,6 +634,25 @@
                     <div class="work-title">神秘古丝帛</div>
                     <div class="work-meta">安徽文艺出版社 · 2020</div>
                     <div class="work-desc">一部战争年代的悬疑小说。</div>
+                </div>
+            </div>
+            <!-- 散文集 -->
+            <div class="work-item">
+                <div class="work-tag">散文集</div>
+                <div class="work-cover">📝</div>
+                <div class="work-info">
+                    <div class="work-title">我挽春风去远方</div>
+                    <div class="work-meta">江西高校出版社 · 2025</div>
+                    <div class="work-desc">以春风为笔，写远方之思，近年散文新作结集。</div>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-tag">散文集</div>
+                <div class="work-cover">📝</div>
+                <div class="work-info">
+                    <div class="work-title">写给岁月的情书</div>
+                    <div class="work-meta">民主与建设出版社 · 2019</div>
+                    <div class="work-desc">把岁月当作爱人，写下一封封深情的情书。</div>
                 </div>
             </div>
             <div class="work-item">
@@ -695,21 +673,40 @@
                     <div class="work-desc">一部青春的寄语和情爱童话。</div>
                 </div>
             </div>
+            <!-- 纪实文学 -->
+            <div class="work-item">
+                <div class="work-tag">纪实</div>
+                <div class="work-cover">📰</div>
+                <div class="work-info">
+                    <div class="work-title">守桥翁的中国梦</div>
+                    <div class="work-meta">中国青年出版社 · 2014</div>
+                    <div class="work-desc">长篇纪实文学，中国人民抗日战争纪念馆的创建往事。</div>
+                </div>
+            </div>
+            <!-- 游记 -->
+            <div class="work-item">
+                <div class="work-tag">游记</div>
+                <div class="work-cover">🌍</div>
+                <div class="work-info">
+                    <div class="work-title">寻梦塞纳河</div>
+                    <div class="work-meta">知识出版社 · 2016</div>
+                    <div class="work-desc">长篇游记散文，在塞纳河畔寻一场文学之梦。</div>
+                </div>
+            </div>
         </div>
 
-        <!-- 文学足迹预览 -->
+        <!-- 文学足迹 -->
         <div class="section-title">
             文学足迹 <span class="en">Footprints</span>
-       
         </div>
         <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; background: #fff9f0; padding: 25px; border: 1px solid #eee;">
             <div style="flex:1; min-width: 200px;">
                 <div style="font-size: 14px; color: #a52a2a; margin-bottom: 5px;">2025.09</div>
-                <div style="font-weight: 500;">《巴黎背影》北大纵横作品分享会</div>  <!-- 修改点3 -->
+                <div style="font-weight: 500;">《巴黎背影》北大纵横作品分享会</div>
                 <div style="color: #666; font-size: 14px;">与读者面对面</div>
             </div>
             <div style="flex:1; min-width: 200px;">
-                <div style="font-size: 14px; color: #a52a2a; margin-bottom: 5px;">2014.05</div>  <!-- 新增点4 -->
+                <div style="font-size: 14px; color: #a52a2a; margin-bottom: 5px;">2014.05</div>
                 <div style="font-weight: 500;">《我愿用温柔对你，赶走这个世界的阴霾》北京师范大学文学院 创作分享会</div>
                 <div style="color: #666; font-size: 14px;">与师生交流创作心得</div>
             </div>
@@ -722,7 +719,7 @@
 
         <!-- 底部 -->
         <footer>
-            <div>© 2026 剑钧文学 · 版权所有 · </div>
+            <div>© 2026 剑钧文学 · 版权所有</div>
             <div class="footer-links">
                 <a href="#">关于本站</a>
                 <a href="#">联系合作</a>
@@ -730,9 +727,9 @@
             </div>
         </footer>
     </div>
+    <!-- 结束 .container -->
 
     <script>
-        // 简单的标签切换效果（演示用）- 可点击查看分类，目前仅弹出提示
         document.querySelectorAll('.work-tab').forEach(tab => {
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.work-tab').forEach(t => t.classList.remove('active'));
@@ -742,11 +739,7 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
 
 
 
